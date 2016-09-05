@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 七哥的随心谈</title>
+    <link>http://blog.thinkqs.com/post/</link>
+    <description>Recent content in Posts on 七哥的随心谈</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 05 Sep 2016 19:56:47 +0800</lastBuildDate>
+    <atom:link href="http://blog.thinkqs.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>good to great</title>
+      <link>http://blog.thinkqs.com/post/good-to-great/</link>
+      <pubDate>Mon, 05 Sep 2016 19:56:47 +0800</pubDate>
+      
+      <guid>http://blog.thinkqs.com/post/good-to-great/</guid>
+      <description>&lt;p&gt;I read &lt;strong&gt;Good to Great in January 2016&lt;/strong&gt;. An awesome read sharing detailed analysis on how good companies became great.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
