@@ -63,7 +63,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="http://blog.thinkqs.com/">Blackburn</a>
+  <a class="pure-menu-heading brand" href="http://blog.thinkqs.com/">f0x11</a>
 
 
   <div class="pure-menu">
@@ -202,10 +202,12 @@
 
 </div>
 
-  <p><strong>go编译出的程序有系统依赖吗?</strong>
-&gt; 有,go是编译性语言.</p>
+  <p><em>go编译出的程序有系统依赖吗?</em></p>
 
-<p><strong>slice内存,引用数组的内存</strong></p>
+<pre><code>有,go是编译性语言.
+</code></pre>
+
+<p><em>slice内存,引用数组的内存</em></p>
 
 <pre><code>package main
 
@@ -226,17 +228,16 @@ func main() {
 }
 </code></pre>
 
-<blockquote>
-<p>e在append前指向d[2:], append后超出cap, 新分配cap*2的内存并copy原数据
+<pre><code>e在append前指向d[2:], append后超出cap, 新分配cap*2的内存并copy原数据
 d在append前,对e进行操作d会受到影响,append后不再受影响.
-f并没有受e的append影响,仍然保留原值.</p>
-</blockquote>
+f并没有受e的append影响,仍然保留原值.
+</code></pre>
 
-<p><strong>nil slice和empty slice的append内存扩展机制</strong></p>
+<p><em>nil slice和empty slice的append内存扩展机制</em></p>
 
-<p><strong>不要通过共享来通信,而要通过通信来共享.</strong></p>
+<p><em>不要通过共享来通信,而要通过通信来共享.</em></p>
 
-<p><strong>所有进程都阻塞后会报dead lock.</strong></p>
+<p><em>所有进程都阻塞后会报dead lock.</em></p>
 
 <pre><code>package main
 

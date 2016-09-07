@@ -65,7 +65,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="http://blog.thinkqs.com/">Blackburn</a>
+  <a class="pure-menu-heading brand" href="http://blog.thinkqs.com/">f0x11</a>
 
 
   <div class="pure-menu">
@@ -216,7 +216,7 @@
   </header>
 
   <p>
-  go编译出的程序有系统依赖吗? &gt; 有,go是编译性语言. slice内存,引用数组的内存 package main import &quot;fmt&quot; func main() { d := []int{1, 2, 3, 4} e := d[2:] f := e fmt.Println(&quot;d1 =&quot;, d) fmt.Println(&quot;e1 =&quot;, e) fmt.Println(&quot;f1 =&quot;, f) e = append(e, 5, 6) e[1] = 7 fmt.Println(&quot;d2 =&quot;, d) fmt.Println(&quot;e2 =&quot;, e) fmt.Println(&quot;f2 =&quot;, f) } e在append前指向d[2:], append后超出cap, 新分配cap*2的内存并copy原数据 d在append前,对e进行操作d会受到影响,append后不再受影响. f并没有受e的append影响,仍然保留原值. nil slice和empty slice的append内存扩展机制 不要通过共享来通信,而要通过通信来共享. 所有进程都阻塞后会报dead lock. package main import &quot;fmt&quot; func main() { c :=
+  go编译出的程序有系统依赖吗? 有,go是编译性语言. slice内存,引用数组的内存 package main import &quot;fmt&quot; func main() { d := []int{1, 2, 3, 4} e := d[2:] f := e fmt.Println(&quot;d1 =&quot;, d) fmt.Println(&quot;e1 =&quot;, e) fmt.Println(&quot;f1 =&quot;, f) e = append(e, 5, 6) e[1] = 7 fmt.Println(&quot;d2 =&quot;, d) fmt.Println(&quot;e2 =&quot;, e) fmt.Println(&quot;f2 =&quot;, f) } e在append前指向d[2:], append后超出cap, 新分配cap*2的内存并copy原数据 d在append前,对e进行操作d会受到影响,append后不再受影响. f并没有受e的append影响,仍然保留原值. nil slice和empty slice的append内存扩展机制 不要通过共享来通信,而要通过通信来共享. 所有进程都阻塞后会报dead lock. package main import &quot;fmt&quot; func main() { c := make(chan
   </p>
 
   
