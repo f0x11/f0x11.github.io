@@ -7,16 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 05 Sep 2016 19:56:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Sep 2016 13:48:27 +0800</lastBuildDate>
     <atom:link href="http://blog.thinkqs.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>good to great</title>
-      <link>http://blog.thinkqs.com/post/good-to-great/</link>
-      <pubDate>Mon, 05 Sep 2016 19:56:47 +0800</pubDate>
+      <title>Golang学习问题1</title>
+      <link>http://blog.thinkqs.com/post/golang-qa/</link>
+      <pubDate>Wed, 07 Sep 2016 13:48:27 +0800</pubDate>
       
-      <guid>http://blog.thinkqs.com/post/good-to-great/</guid>
-      <description>&lt;p&gt;I read &lt;strong&gt;Good to Great in January 2016&lt;/strong&gt;. An awesome read sharing detailed analysis on how good companies became great.&lt;/p&gt;
+      <guid>http://blog.thinkqs.com/post/golang-qa/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;go编译出的程序有系统依赖吗?&lt;/strong&gt;
+&amp;gt; 有,go是编译性语言.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;slice内存,引用数组的内存&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    d := []int{1, 2, 3, 4}
+    e := d[2:]
+    f := e
+    fmt.Println(&amp;quot;d1 =&amp;quot;, d)
+    fmt.Println(&amp;quot;e1 =&amp;quot;, e)
+    fmt.Println(&amp;quot;f1 =&amp;quot;, f)
+    e = append(e, 5, 6)
+    e[1] = 7
+    fmt.Println(&amp;quot;d2 =&amp;quot;, d)
+    fmt.Println(&amp;quot;e2 =&amp;quot;, e)
+    fmt.Println(&amp;quot;f2 =&amp;quot;, f)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;e在append前指向d[2:], append后超出cap, 新分配cap*2的内存并copy原数据
+d在append前,对e进行操作d会受到影响,append后不再受影响.
+f并没有受e的append影响,仍然保留原值.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;nil slice和empty slice的append内存扩展机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;不要通过共享来通信,而要通过通信来共享.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;所有进程都阻塞后会报dead lock.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    c := make(chan int, 1)
+    c &amp;lt;- 1
+    c &amp;lt;- 2
+    fmt.Println(&amp;lt;-c)
+    fmt.Println(&amp;lt;-c)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.thinkqs.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.thinkqs.com/about/</guid>
+      <description>&lt;p&gt;Nothing.&lt;/p&gt;
 </description>
     </item>
     
