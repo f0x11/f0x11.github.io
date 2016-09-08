@@ -235,6 +235,32 @@ f并没有受e的append影响,仍然保留原值.
 
 <p><em>nil slice和empty slice的append内存扩展机制</em></p>
 
+<pre><code>var slice []int
+
+fmt.Println(&quot;nil len =&quot;, len(slice))
+fmt.Println(&quot;nil cap =&quot;, cap(slice))
+
+newSlice := append(slice, 5, 99)
+
+fmt.Println(&quot;newSlice len =&quot;, len(newSlice))
+fmt.Println(&quot;newSlice cap =&quot;, cap(newSlice))
+
+newSlice = append(newSlice, 6)
+
+fmt.Println(&quot;newSlice len =&quot;, len(newSlice))
+fmt.Println(&quot;newSlice cap =&quot;, cap(newSlice))
+
+newSlice = append(newSlice, 7)
+
+fmt.Println(&quot;newSlice len =&quot;, len(newSlice))
+fmt.Println(&quot;newSlice cap =&quot;, cap(newSlice))
+</code></pre>
+
+<pre><code>初始len和cap为0
+第一次append n个数据后, len和cap为n
+之后规则和正常数组相同
+</code></pre>
+
 <p><em>不要通过共享来通信,而要通过通信来共享.</em></p>
 
 <p><em>所有进程都阻塞后会报dead lock.</em></p>

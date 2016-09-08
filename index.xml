@@ -49,6 +49,32 @@ f并没有受e的append影响,仍然保留原值.
 
 &lt;p&gt;&lt;em&gt;nil slice和empty slice的append内存扩展机制&lt;/em&gt;&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;var slice []int
+
+fmt.Println(&amp;quot;nil len =&amp;quot;, len(slice))
+fmt.Println(&amp;quot;nil cap =&amp;quot;, cap(slice))
+
+newSlice := append(slice, 5, 99)
+
+fmt.Println(&amp;quot;newSlice len =&amp;quot;, len(newSlice))
+fmt.Println(&amp;quot;newSlice cap =&amp;quot;, cap(newSlice))
+
+newSlice = append(newSlice, 6)
+
+fmt.Println(&amp;quot;newSlice len =&amp;quot;, len(newSlice))
+fmt.Println(&amp;quot;newSlice cap =&amp;quot;, cap(newSlice))
+
+newSlice = append(newSlice, 7)
+
+fmt.Println(&amp;quot;newSlice len =&amp;quot;, len(newSlice))
+fmt.Println(&amp;quot;newSlice cap =&amp;quot;, cap(newSlice))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;初始len和cap为0
+第一次append n个数据后, len和cap为n
+之后规则和正常数组相同
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;&lt;em&gt;不要通过共享来通信,而要通过通信来共享.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;所有进程都阻塞后会报dead lock.&lt;/em&gt;&lt;/p&gt;
